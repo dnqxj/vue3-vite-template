@@ -1,22 +1,38 @@
+/*
+ * @Author: He Peng
+ * @Date: 2022-05-11 15:20:47
+ * @LastEditors: He Peng
+ * @LastEditTime: 2022-05-12 09:25:47
+ * @Descripttion: eslint config
+ */
 module.exports = {
-    "env": {
-        "es2021": true,
-        "node": true
+    root: true,
+    env: {
+      node: true,
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/essential",
-        "plugin:@typescript-eslint/recommended"
+    extends: [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/typescript/recommended",
+      "plugin:prettier/recommended",
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "parser": "@typescript-eslint/parser",
-        "sourceType": "module"
+    parserOptions: {
+      ecmaVersion: 2020,
     },
-    "plugins": [
-        "vue",
-        "@typescript-eslint"
+    rules: {
+      "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+      "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    },
+    overrides: [
+      {
+        files: [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)",
+        ],
+        env: {
+          jest: true,
+        },
+      },
     ],
-    "rules": {
-    }
-}
+  };
+  
