@@ -2,7 +2,7 @@
  * @Author: He Peng
  * @Date: 2022-05-12 11:21:54
  * @LastEditors: He Peng
- * @LastEditTime: 2022-05-13 16:18:19
+ * @LastEditTime: 2022-05-13 17:13:47
  * @Descripttion: 
  */
 import { MockMethod } from 'vite-plugin-mock'
@@ -21,8 +21,16 @@ let List = {
             name: 'aaa'
           },
           {
-            id: 1,
+            id: 2,
             name: 'bbb'
+          },
+          {
+            id: 3,
+            name: 'ccc'
+          },
+          {
+            id: 4,
+            name: 'ddd'
           },
         ]
       }
