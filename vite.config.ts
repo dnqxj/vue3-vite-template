@@ -3,7 +3,7 @@
  * @Date: 2022-05-12 08:52:52
  * @LastEditors: He Peng
  * @LastEditTime: 2022-05-13 15:43:21
- * @Descripttion: 
+ * @Descripttion:
  */
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -11,13 +11,13 @@ import { resolve } from 'path'
 import { viteMockServe } from 'vite-plugin-mock'
 
 // https://vitejs.dev/config/
-export default ({command, mode}) => {
-  const envConfig = loadEnv(mode, './');
+export default ({ command, mode }) => {
+  const envConfig = loadEnv(mode, './')
   let config = {
     plugins: [
       vue(),
       viteMockServe({
-        mockPath: './src/mock/source',  // 解析，路径可根据实际变动
+        mockPath: './src/mock/source', // 解析，路径可根据实际变动
         localEnabled: true
       })
     ],
@@ -25,7 +25,7 @@ export default ({command, mode}) => {
       alias: {
         '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
       },
-      extensions: [".js", ".ts", ".tsx", ".jsx"],
+      extensions: ['.js', '.ts', '.tsx', '.jsx']
     },
     define: {
       'process.env': envConfig
